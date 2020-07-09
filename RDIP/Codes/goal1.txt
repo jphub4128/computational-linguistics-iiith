@@ -1,9 +1,0 @@
-starting onclick func
-using select switch to change the language
-button animation like float around
-word to word check whether all words are completed or not
-reset button
-check the answer
-final display
-if wrong answer display the correct sentence button and show all possible answers
-each time the languge is selected or reload the page the sentence change(the words change)
