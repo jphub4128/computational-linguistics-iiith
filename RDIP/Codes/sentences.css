@@ -1,0 +1,17 @@
+h2{
+
+    text-align: center;
+}
+p1 {
+    color: darkblue;
+    font-size: 20px;
+}
+p2 {
+       color:blueviolet;
+        font-size: 15px;
+        font-style: oblique;
+}
+    
+button {
+        padding: 15px 25px 15px 25px;
+    }
