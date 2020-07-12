@@ -5,6 +5,7 @@ h2{
 p1 {
     color: darkblue;
     font-size: 20px;
+    text-align: center;
 }
 p2 {
        color:blueviolet;
@@ -15,3 +16,10 @@ p2 {
 button {
         padding: 15px 25px 15px 25px;
     }
+td
+{
+    font-size: 30px;
+    text-align:center;
+    font-style: oblique;
+    
+}

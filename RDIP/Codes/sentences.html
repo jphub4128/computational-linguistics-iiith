@@ -4,43 +4,47 @@
     <meta http-eqiv="Content-Type" content="text/html; charset = utf-8" />
     <title></title>
     <link rel="stylesheet" href="sentences.css">
-     <script src ="sentences.js"></script>
-
+    <script src="sentences.js"></script>
 </head>
 <body>
 
     <h2>language selection</h2><br><br>
     <center>
-        <select name="languague" id="lan" >
+        <select name="languague" id="language" onchange="display()" >
             <option>---Select Languague---</option>
-            <option value="English" onclick="english()">English</option>
-            <option value="Hindi" onclick="hindi()">Hindi</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
         </select>
     </center><br><br><br>
     <center><b><p1 id="dis_sen"></p1></b></center><br>
     <center><b><p2 id="dis_sub"></p2></b></center><br><br>
     <center>
-        <p id="s1"></p>
+        
         <table>
             <tbody>
                 <tr>
-                    <td id="0"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="1"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="2"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="3"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="4"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="5"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="6"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="7"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="8"></td>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <td id="9"></td>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <td id="0" onclick="newsentence(0)"></td>
+                    <td id="1" onclick="newsentence(1)"></td>
+                    <td id="2" onclick="newsentence(2)"></td>
+                    <td id="3" onclick="newsentence(3)"></td>
+                    <td id="4" onclick="newsentence(4)"></td>
+                    <td id="5" onclick="newsentence(5)"></td>
+                    <td id="6" onclick="newsentence(6)"></td>
+                    <td id="7" onclick="newsentence(7)"></td>
+                    <td id="8" onclick="newsentence(8)"></td>
+                    <td id="9" onclick="newsentence(9)"></td>
                 </tr>
 
             </tbody>
         </table>
     </center><br><br><br>
-<script src="sentences.js"></script>
+    <center><b><p1 id="created_sentence"></p1></b><p2 id="bee"></p2></center><br><br><br>
+    <center><p id="d1"></p></center><br /><br />
+    <center><p id="reform"></p></center><br><br>
+
+    <p id="d2"></p>
+    <p id="d3"></p>
+    <p id="d4"></p>
 </body>
 
-
-</html>  
+</html> 
