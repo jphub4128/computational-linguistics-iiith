@@ -4,13 +4,16 @@ function display()
     document.getElementById("check").innerHTML = "";                                                    
     document.getElementById("reform").innerHTML = "";                                                    
     document.getElementById("created_sentence").innerHTML = "";                                               
-    document.getElementById("bee").innerHTML = "";                                                    
+    document.getElementById("bee").innerHTML = ""; 
+                                                       
     for (var k = 0; k < 10; k++) {
         document.getElementById(k).value = " ";                                                          
     }
     count = 0;
     if (document.getElementById("language").value == "English")
     {
+        answers="";
+        finalsentence="";
         document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
         document.getElementById("dis_sub").innerHTML = "(select the buttons in proper order)";
 
@@ -49,9 +52,10 @@ function display()
             }
         }
 
-        else 
+        else if (document.getElementById("language").value === "Hindi")
         {
-    
+            answers="";
+        finalsentence="";
             document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
             document.getElementById("dis_sub").innerHTML = "(select the buttons in proper order)";
     
@@ -104,7 +108,7 @@ function newsentence(k)
         count++;
         var len = document.getElementById("created_sentence").value;
         if (count === len) {
-        document.getElementById("check").innerHTML = "<button>" + "Check the correctness of this sentence" + "</button>";
+        document.getElementById("check").innerHTML ="<center><button id='correctness'  onclick='compares()'>Check the correctness</button></center>"
     }
     }
 function reformsen() 
@@ -124,3 +128,21 @@ function reformsen()
         }
     
     } 
+    var answers="";
+    function compares(){
+
+        var str= document.getElementById("created_sentence").value;
+        str2=str.trim();
+    for(let i=0;i<comarray.length;i++){
+        var str1 = comarray[i];
+         console.log(i, str1.localeCompare(str2), str2, str2.length, str1, str1.length)
+        var n = str1.localeCompare(str2);
+        if (n == 0) {
+            document.getElementById("d3").innerHTML = "RIGHT";
+
+            return;
+        }
+    }
+    document.getElementById("d4").innerHTML = "WRONG";
+
+}
