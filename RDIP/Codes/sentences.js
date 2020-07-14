@@ -1,7 +1,14 @@
 function display()
 {
-    document.getElementById("d1").innerHTML = "";
-    
+    document.getElementById("d1").innerHTML = "";                                                      
+    document.getElementById("check").innerHTML = "";                                                    
+    document.getElementById("reform").innerHTML = "";                                                    
+    document.getElementById("created_sentence").innerHTML = "";                                               
+    document.getElementById("bee").innerHTML = "";                                                    
+    for (var k = 0; k < 10; k++) {
+        document.getElementById(k).value = " ";                                                          
+    }
+    count = 0;
     if (document.getElementById("language").value == "English")
     {
         document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
@@ -22,6 +29,7 @@ function display()
             obj = JSON.parse(text);
             var t = obj.eng1[x].a;
             var q = t.split(" ");
+            document.getElementById("created_sentence").value = q.length;
             var b = [];
             var i = 0;
             do {
@@ -41,7 +49,7 @@ function display()
             }
         }
 
-        else if (document.getElementById("language").value == "Hindi")
+        else 
         {
     
             document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
@@ -60,6 +68,7 @@ function display()
             obj = JSON.parse(hin);
             var t = obj.hin1[x].a;
             var q = t.split(" ");
+            document.getElementById("created_sentence").value = q.length;
             var b = [];
             var i = 0;
             do {
@@ -82,27 +91,35 @@ function display()
         }
 
     }
+    var count=0;
 function newsentence(k)
     {
         var u = document.getElementById(k).value
-        document.getElementById("d1").value += u + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp";
+        document.getElementById("d1").value += u ;
         document.getElementById("d1").innerHTML +=u+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp";
         document.getElementById(k).innerHTML = " ";
-        document.getElementById("created_sentence").innerHTML = "created Sentence"
-        document.getElementById("bee").innerHTML = " (after selecting the words): "
-        document.getElementById("reform").innerHTML = "<button>" + "Re-form the sentence" + "</button>"
+        document.getElementById("created_sentence").innerHTML = "created Sentence";
+        document.getElementById("bee").innerHTML = " (after selecting the words): ";
+        document.getElementById("reform").innerHTML = "<button>" + "Re-form the sentence" + "</button>";
+        count++;
+        var len = document.getElementById("created_sentence").value;
+        if (count === len) {
+        document.getElementById("check").innerHTML = "<button>" + "Check the correctness of this sentence" + "</button>";
+    }
     }
 function reformsen() 
     {
+        count=0;
+        document.getElementById("d1").innerHTML = " ";
         document.getElementById("created_sentence").innerHTML = " ";
         document.getElementById("bee").innerHTML = " ";
         document.getElementById("reform").innerHTML = " ";
-        document.getElementById("d1").innerHTML = " ";
+        document.getElementById("check").innerHTML = "";
         for (var i = 0; i < 10; i++)
         {
             var a = document.getElementById(i).value
-            if (a != undefined) {
-                document.getElementById(i).innerHTML = "<button>"+a+"</button>";
+            if (a != "") {
+                document.getElementById(i).innerHTML = "<button>" + a + "</button>";
             }
         }
     
