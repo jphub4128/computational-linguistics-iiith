@@ -1,11 +1,12 @@
 function display()
 {
     document.getElementById("d1").innerHTML = "";
-    document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
-    document.getElementById("dis_sub").innerHTML = "(select the buttons in proper order)";
-
+    
     if (document.getElementById("language").value == "English")
     {
+        document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
+        document.getElementById("dis_sub").innerHTML = "(select the buttons in proper order)";
+
         var text = '{"eng1":[' +
             '{"a":"John ate an apple before afternoon","b":"before afternoon John ate an apple","c":"John before afternoon ate an apple"},' +
             '{"a":"John and Mary went to church","b":"Mary and John went to church"},' +
@@ -81,13 +82,28 @@ function display()
         }
 
     }
-    function newsentence(k)
+function newsentence(k)
     {
         var u = document.getElementById(k).value
-        u.disabled == true;
+        document.getElementById("d1").value += u + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp";
         document.getElementById("d1").innerHTML +=u+"&nbsp"+"&nbsp"+"&nbsp"+"&nbsp";
         document.getElementById(k).innerHTML = " ";
         document.getElementById("created_sentence").innerHTML = "created Sentence"
         document.getElementById("bee").innerHTML = " (after selecting the words): "
         document.getElementById("reform").innerHTML = "<button>" + "Re-form the sentence" + "</button>"
     }
+function reformsen() 
+    {
+        document.getElementById("created_sentence").innerHTML = " ";
+        document.getElementById("bee").innerHTML = " ";
+        document.getElementById("reform").innerHTML = " ";
+        document.getElementById("d1").innerHTML = " ";
+        for (var i = 0; i < 10; i++)
+        {
+            var a = document.getElementById(i).value
+            if (a != undefined) {
+                document.getElementById(i).innerHTML = "<button>"+a+"</button>";
+            }
+        }
+    
+    } 
