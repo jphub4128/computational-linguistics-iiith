@@ -66,7 +66,7 @@ function display()
             }
         }
 
-        else 
+        else if(document.getElementById("language").value == "Hindi") 
         {
             
             document.getElementById("dis_sen").innerHTML = "Form a sentence (Declarative or Interrogative or any other type) from the given words";
@@ -97,7 +97,10 @@ function display()
                 document.getElementById(j).innerHTML =" ";
             }
         }
-
+        else
+        {
+            alert("Select languague");
+        }
     }
     var count=0;
 function newsentence(k)
