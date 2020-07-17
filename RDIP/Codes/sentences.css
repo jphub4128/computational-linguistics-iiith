@@ -1,5 +1,4 @@
 h2{
-
     text-align: center;
 }
 p1 {
@@ -27,4 +26,11 @@ p3
 {
     font-size: 20px;
 }
-
+#rightanswer{
+    color: green;
+    font-size: 30px;
+}
+#wronganswer{
+    color: red;
+    font-size: 30px;
+}
