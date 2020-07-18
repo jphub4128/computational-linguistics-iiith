@@ -1,0 +1,12 @@
+Drop down menu : to select required corpus 
+on selecting required a paragraph is displayed
+We have to calculate number of tokens and types present over there.
+tokens and types : 
+Enter the tokens and types you calculated in the given boxes and then click submit
+Submit:
+if the entered tokens and types are correct background is displayed green otherwise red.
+It displays right answer if both number of tokens and types are correct and also a button continue is displayed
+other wise it shows wrong answer.
+continue: 
+we have to recalculate new types present in that corpus and then click on submit.
+it gives right answer if we enter correct value otherwise wrong answer.
